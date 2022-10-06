@@ -23,7 +23,7 @@ class NotificationButton extends StatelessWidget {
       style: ButtonStyle(
         backgroundColor: buttonBackgroundColor,
         fixedSize: MaterialStateProperty.all(
-          const Size(300, 50),
+          const Size(300, 65),
         ),
       ),
     );

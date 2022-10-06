@@ -16,7 +16,7 @@ class NotificationButtons extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           NotificationButton(
-            buttonText: "Send 'async' Notification!",
+            buttonText: "Send Notification After 3 Seconds!",
             buttonBackgroundColor: MaterialStateProperty.all(Colors.indigo),
           ),
         ],
