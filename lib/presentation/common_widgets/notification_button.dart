@@ -5,14 +5,17 @@ class NotificationButton extends StatelessWidget {
     Key? key,
     required this.buttonBackgroundColor,
     required this.buttonText,
+    required this.onPressed,
   }) : super(key: key);
 
   final MaterialStateProperty<Color?>? buttonBackgroundColor;
   final String buttonText;
+  final void Function() onPressed;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         buttonText,
         style: const TextStyle(
