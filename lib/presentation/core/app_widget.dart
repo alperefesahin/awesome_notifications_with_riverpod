@@ -3,13 +3,13 @@ import 'package:awesome_notifications_with_riverpod/presentation/routes/router.g
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+final appRouter = AppRouter();
+
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter();
-
     AwesomeNotifications().initialize(
       null,
       [
@@ -28,8 +28,8 @@ class AppWidget extends StatelessWidget {
     return ProviderScope(
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        routerDelegate: _appRouter.delegate(),
-        routeInformationParser: _appRouter.defaultRouteParser(),
+        routerDelegate: appRouter.delegate(),
+        routeInformationParser: appRouter.defaultRouteParser(),
       ),
     );
   }

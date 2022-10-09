@@ -1,6 +1,8 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:awesome_notifications_with_riverpod/application/notification/notification_event.dart';
 import 'package:awesome_notifications_with_riverpod/application/notification/notification_state.dart';
+import 'package:awesome_notifications_with_riverpod/presentation/core/app_widget.dart';
+import 'package:awesome_notifications_with_riverpod/presentation/routes/router.gr.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class NotificationNotifier extends StateNotifier<NotificationState> {
@@ -10,10 +12,10 @@ class NotificationNotifier extends StateNotifier<NotificationState> {
   static Future<void> onActionReceivedMethod(
       ReceivedAction receivedAction) async {
     if (receivedAction.id == 1) {
-      print("do somethings...");
+      appRouter.push(const OrangeRoute());
     }
     if (receivedAction.id == 2) {
-      print("after 3 seconds, do somethings...");
+      appRouter.push(const PurpleRoute());
     }
   }
 

@@ -5,6 +5,7 @@ import 'package:awesome_notifications_with_riverpod/presentation/pages/notificat
 import 'package:awesome_notifications_with_riverpod/presentation/pages/notification_page/widgets/notification_buttons.dart';
 import 'package:flutter/material.dart';
 
+
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);
 
