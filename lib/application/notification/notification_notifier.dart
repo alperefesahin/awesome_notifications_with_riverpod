@@ -4,7 +4,18 @@ import 'package:awesome_notifications_with_riverpod/application/notification/not
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class NotificationNotifier extends StateNotifier<NotificationState> {
-  NotificationNotifier() : super(NotificationState.empty()) {}
+  NotificationNotifier() : super(NotificationState.empty());
+
+  @pragma("vm:entry-point")
+  static Future<void> onActionReceivedMethod(
+      ReceivedAction receivedAction) async {
+    if (receivedAction.id == 1) {
+      print("do somethings...");
+    }
+    if (receivedAction.id == 2) {
+      print("after 3 seconds, do somethings...");
+    }
+  }
 
   void mapEventsToState(NotificationEvent event) {
     event.map(
