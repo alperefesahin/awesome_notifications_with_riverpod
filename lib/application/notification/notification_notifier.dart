@@ -13,11 +13,22 @@ class NotificationNotifier extends StateNotifier<NotificationState> {
   static Future<void> onActionReceivedMethod(
       ReceivedAction receivedAction) async {
     final appRouter = getIt<AppRouter>();
+    const String orangePageText = "The page that has orange background color.";
+    const String purplePageText = "The page that has purple background color.";
+
     if (receivedAction.id == 1) {
-      appRouter.push(const OrangeRoute());
+      appRouter.push(
+        OrangeRoute(
+          centeredPageText: orangePageText,
+        ),
+      );
     }
     if (receivedAction.id == 2) {
-      appRouter.push(const PurpleRoute());
+      appRouter.push(
+        PurpleRoute(
+          centeredPageText: purplePageText,
+        ),
+      );
     }
   }
 

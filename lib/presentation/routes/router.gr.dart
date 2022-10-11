@@ -31,15 +31,23 @@ class AppRouter extends _i4.RootStackRouter {
       );
     },
     OrangeRoute.name: (routeData) {
+      final args = routeData.argsAs<OrangeRouteArgs>();
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i2.OrangePage(),
+        child: _i2.OrangePage(
+          key: args.key,
+          centeredPageText: args.centeredPageText,
+        ),
       );
     },
     PurpleRoute.name: (routeData) {
+      final args = routeData.argsAs<PurpleRouteArgs>();
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const _i3.PurplePage(),
+        child: _i3.PurplePage(
+          key: args.key,
+          centeredPageText: args.centeredPageText,
+        ),
       );
     },
   };
@@ -75,24 +83,68 @@ class NotificationRoute extends _i4.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.OrangePage]
-class OrangeRoute extends _i4.PageRouteInfo<void> {
-  const OrangeRoute()
-      : super(
+class OrangeRoute extends _i4.PageRouteInfo<OrangeRouteArgs> {
+  OrangeRoute({
+    _i5.Key? key,
+    required String centeredPageText,
+  }) : super(
           OrangeRoute.name,
           path: '/orange-page',
+          args: OrangeRouteArgs(
+            key: key,
+            centeredPageText: centeredPageText,
+          ),
         );
 
   static const String name = 'OrangeRoute';
 }
 
+class OrangeRouteArgs {
+  const OrangeRouteArgs({
+    this.key,
+    required this.centeredPageText,
+  });
+
+  final _i5.Key? key;
+
+  final String centeredPageText;
+
+  @override
+  String toString() {
+    return 'OrangeRouteArgs{key: $key, centeredPageText: $centeredPageText}';
+  }
+}
+
 /// generated route for
 /// [_i3.PurplePage]
-class PurpleRoute extends _i4.PageRouteInfo<void> {
-  const PurpleRoute()
-      : super(
+class PurpleRoute extends _i4.PageRouteInfo<PurpleRouteArgs> {
+  PurpleRoute({
+    _i5.Key? key,
+    required String centeredPageText,
+  }) : super(
           PurpleRoute.name,
           path: '/purple-page',
+          args: PurpleRouteArgs(
+            key: key,
+            centeredPageText: centeredPageText,
+          ),
         );
 
   static const String name = 'PurpleRoute';
+}
+
+class PurpleRouteArgs {
+  const PurpleRouteArgs({
+    this.key,
+    required this.centeredPageText,
+  });
+
+  final _i5.Key? key;
+
+  final String centeredPageText;
+
+  @override
+  String toString() {
+    return 'PurpleRouteArgs{key: $key, centeredPageText: $centeredPageText}';
+  }
 }

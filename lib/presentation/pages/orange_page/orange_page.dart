@@ -1,13 +1,26 @@
 import 'package:flutter/material.dart';
 
 class OrangePage extends StatelessWidget {
-  const OrangePage({Key? key}) : super(key: key);
+  const OrangePage({
+    Key? key,
+    required this.centeredPageText,
+  }) : super(key: key);
+
+  final String centeredPageText;
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.orange,
       body: Center(
-        child: Text("data"),
+        child: Text(
+          centeredPageText,
+          style: const TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 25,
+          ),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
