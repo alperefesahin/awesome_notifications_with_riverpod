@@ -30,7 +30,7 @@ class NotificationNotifier extends StateNotifier<NotificationState> {
     return await AwesomeNotifications().createNotification(
       content: NotificationContent(
         id: id,
-        channelKey: 'basic_channel',
+        channelKey: 'channel',
         title: title,
         body: body,
         actionType: ActionType.Default,

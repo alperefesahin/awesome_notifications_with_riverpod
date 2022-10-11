@@ -13,13 +13,10 @@ class AppWidget extends StatelessWidget {
       null,
       [
         NotificationChannel(
-          channelGroupKey: 'basic_channel_group',
-          channelKey: 'basic_channel',
-          channelName: 'Basic notifications',
-          channelDescription: 'Notification channel for basic tests',
-          defaultColor: Colors.purpleAccent,
-          ledColor: Colors.white,
-        )
+          channelKey: 'channel',
+          channelName: 'notification',
+          channelDescription: 'Notification channel',
+        ),
       ],
       debug: true,
     );
