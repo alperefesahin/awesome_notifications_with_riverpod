@@ -8,28 +8,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class NotificationNotifier extends StateNotifier<NotificationState> {
   NotificationNotifier() : super(NotificationState.empty());
 
-  // onActionReceivedMethod is for managing the routes after clicked the notification
-  @pragma("vm:entry-point")
-  static Future<void> onActionReceivedMethod(
-      ReceivedAction receivedAction) async {
-    final appRouter = getIt<AppRouter>();
-    const String orangePageText = "The page that has orange background color.";
-    const String purplePageText = "The page that has purple background color.";
-
-    if (receivedAction.id == 1) {
-      appRouter.push(
-        OrangeRoute(
-          centeredPageText: orangePageText,
-        ),
-      );
-    }
-    if (receivedAction.id == 2) {
-      appRouter.push(
-        PurpleRoute(
-          centeredPageText: purplePageText,
-        ),
-      );
-    }
+  // requestNotificationPermissionToSend is very important to not harm the user experience
+  Future<bool> requestNotificationPermissionToSend() async {
+    return await AwesomeNotifications().requestPermissionToSendNotifications();
   }
 
   // createNotification is to send a notification (To get rid of the code duplication)
@@ -71,9 +52,28 @@ class NotificationNotifier extends StateNotifier<NotificationState> {
     );
   }
 
-  // requestNotificationPermissionToSend is very important to not harm the user experience
-  Future<bool> requestNotificationPermissionToSend() async {
-    return await AwesomeNotifications().requestPermissionToSendNotifications();
+  // onActionReceivedMethod is for managing the routes after clicked the notification
+  @pragma("vm:entry-point")
+  static Future<void> onActionReceivedMethod(
+      ReceivedAction receivedAction) async {
+    final appRouter = getIt<AppRouter>();
+    const String orangePageText = "The page that has orange background color.";
+    const String purplePageText = "The page that has purple background color.";
+
+    if (receivedAction.id == 1) {
+      appRouter.push(
+        OrangeRoute(
+          centeredPageText: orangePageText,
+        ),
+      );
+    }
+    if (receivedAction.id == 2) {
+      appRouter.push(
+        PurpleRoute(
+          centeredPageText: purplePageText,
+        ),
+      );
+    }
   }
 
   // Manage the functions or states that have specific events
