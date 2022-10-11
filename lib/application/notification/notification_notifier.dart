@@ -1,7 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:awesome_notifications_with_riverpod/application/notification/notification_event.dart';
 import 'package:awesome_notifications_with_riverpod/application/notification/notification_state.dart';
-import 'package:awesome_notifications_with_riverpod/presentation/core/app_widget.dart';
+import 'package:awesome_notifications_with_riverpod/injection.dart';
 import 'package:awesome_notifications_with_riverpod/presentation/routes/router.gr.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,6 +11,7 @@ class NotificationNotifier extends StateNotifier<NotificationState> {
   @pragma("vm:entry-point")
   static Future<void> onActionReceivedMethod(
       ReceivedAction receivedAction) async {
+    final appRouter = getIt<AppRouter>();
     if (receivedAction.id == 1) {
       appRouter.push(const OrangeRoute());
     }
