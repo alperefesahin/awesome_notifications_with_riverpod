@@ -2,7 +2,7 @@
 
 Documentation is coming soon...
 
-# Packages
+## Packages
   dependencies:
   * auto_route: ^5.0.1
   * flutter_riverpod: ^2.0.0
