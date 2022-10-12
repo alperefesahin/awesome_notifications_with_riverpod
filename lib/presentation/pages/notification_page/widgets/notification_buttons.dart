@@ -1,6 +1,6 @@
 import 'package:awesome_notifications_with_riverpod/application/notification/notification_event.dart';
 import 'package:awesome_notifications_with_riverpod/presentation/common_widgets/notification_button.dart';
-import 'package:awesome_notifications_with_riverpod/presentation/providers/notification_provider.dart';
+import 'package:awesome_notifications_with_riverpod/providers/notification_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
