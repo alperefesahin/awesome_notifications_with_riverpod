@@ -1,6 +1,8 @@
 # awesome_notifications_with_riverpod
 
-Documentation is coming soon...
+You can watch and read this tutorial via YouTube and Medium.
+* YouTube: https://youtu.be/GRurbrfLanE
+* Medium: https://medium.com/@sahinefe/local-notifications-tutorial-in-flutter-awesome-notifications-dependency-injection-routing-992964f68313
 
 ## Packages
   dependencies:
